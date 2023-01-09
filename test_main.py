@@ -25,3 +25,19 @@ def test_translate_t0_eng_2():
     json_data = response.json() 
     assert response.status_code == 200
     assert json_data['translation_text'] == 'The \"Life\" symphony is an unfinished work by Peter Chaikovsky, on which he allegedly worked in 1890 or 1891. It is customary for the \"Life\" symphony to carry two leaves with text inscriptions and related notes by the composer, and the artists agree that they relate to the time of creating a sextete for the string tools \"Remembering Florence\" of Chaikovsky.'
+
+def test_translate_t0_ru_1():
+    response = client.post("/predict/",
+        json={"text": "Science is fascinating!"}
+    )
+    json_data = response.json() 
+    assert response.status_code == 200
+    assert json_data['translation_text'] == "Наука очаровательна!"
+
+def test_translate_t0_ru_2():
+    response = client.post("/predict/",
+        json={"text": "From the ancient world (at least since Aristotle) until the 19th century, natural philosophy was the common term for the study of physics (nature), a broad term that included botany, zoology, anthropology, and chemistry as well as what we now call physics."}
+    )
+    json_data = response.json() 
+    assert response.status_code == 200
+    assert json_data['translation_text'] == "С древних времен (по крайней мере с Аристотеля) до XIX века естественная философия была общим термином для изучения физики (природы), широким термином, который включал ботанику, зоологию, антропологию и химию, а также то, что мы сейчас называем физикой."
