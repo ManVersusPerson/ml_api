@@ -30,3 +30,6 @@ def predict(item: Item):
 		return classifier_en_ru(item.text)[0]
 	else:
 		return classifier_ru_en(item.text)[0]
+
+if __name__ == '__main__':
+    uvicorn.run('main:app', host='0.0.0.0', port=8000, log_level="info", reload=True)
