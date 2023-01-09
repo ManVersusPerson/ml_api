@@ -26,7 +26,7 @@ def predict(item: Item):
 	for it in item.text:
 		if it in dict:
 			count += 1
-	if count / (len(str(item.text))) * 100 > 70:
+	if count / (len(str(item.text))) * 100 > 90:
 		return classifier_en_ru(item.text)[0]
 	else:
 		return classifier_ru_en(item.text)[0]
