@@ -2,5 +2,8 @@ fastapi
 uvicorn
 pydantic
 transformers
-tensorflow
+torch 
+torchvision
+torchaudio
 sentencepiece
+
