@@ -16,10 +16,9 @@ classifier_ru_en = pipeline("translation_ru_to_en",
                         model = "Helsinki-NLP/opus-mt-ru-en")
 
 
-
 @app.get("/")
 def root():
-	return {"message":"Here will be our application"}
+	return {"message":"To translate text, go to /predict"}
 
 @app.post("/predict/")
 def predict(item: Item):
