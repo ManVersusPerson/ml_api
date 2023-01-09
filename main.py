@@ -28,11 +28,11 @@ def predict(item: Item):
 	for it in item.text:
 		if it in dict:
 			count += 1
-	print(count / (len(str(item.text))) * 100)
+			
 	if count / (len(str(item.text))) * 100 > 90:
 		return classifier_en_ru(item.text)[0]
 	else:
 		return classifier_ru_en(item.text)[0]
 
 if __name__ == '__main__':
-    uvicorn.run('main:app', host='0.0.0.0', port=8080, log_level="info", reload=True)
+    uvicorn.run('main:app', host='0.0.0.0', port=8080, log_level="info")
