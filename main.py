@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from transformers import pipeline
 from pydantic import BaseModel
+import uvicorn
+
 
 class Item(BaseModel):
         text: str

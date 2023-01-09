@@ -4,4 +4,9 @@ pydantic
 transformers
 torch 
 torchvision 
+<<<<<<< HEAD
 torchaudio
+=======
+torchaudio
+gunicorn
+>>>>>>> 2c55e76a29fbe004879c6dc086d0be5a377b041f
